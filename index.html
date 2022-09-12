@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+</head>
+<body>
+  <script src='demo.js'></script>
+  <script>new MidiLab.Output();
+const Piano = new MidiLab.Instrument();
+MidiLab.res.load('sample.wav').then(sample => {
+  const group = Piano.createGroup();
+  const C = new MidiLab.Instrument.Zone(sample, MidiLab.note('#C4'), 0, 4);
+  const E = new MidiLab.Instrument.Zone(sample, MidiLab.note('E4'), 4, 4);
+  const G = new MidiLab.Instrument.Zone(sample, MidiLab.note('G4'), 8, 4);
+  const B = new MidiLab.Instrument.Zone(sample, MidiLab.note('bB5'), 12, 4);
+  group.addZone(C, MidiLab.note('C4'), MidiLab.note('D4'));
+  group.addZone(E, MidiLab.note('bE4'), MidiLab.note('F4'));
+  group.addZone(G, MidiLab.note('#F4'), MidiLab.note('#G4'));
+  group.addZone(B, MidiLab.note('A5'), MidiLab.note('B5'));
+});</script>
+</body>
+</html>

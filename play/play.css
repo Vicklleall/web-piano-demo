@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+#layout {
+  position: fixed;
+  inset: 0;
+}
+
+.flow {
+  position: absolute;
+  overflow: hidden;
+}
+
+.note {
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid #246;
+  border-radius: 2px;
+  background: #39f;
+  will-change: transform;
+}
